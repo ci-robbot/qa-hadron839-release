@@ -7,4 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "build v1 on ${GITHUB_REF} ${GITHUB_SHA}"
+      - run: echo "build v2 on ${GITHUB_REF} ${GITHUB_SHA}"
+      - if: github.event_name == 'push'
+        run: sleep 420
